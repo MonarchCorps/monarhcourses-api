@@ -21,7 +21,7 @@ export const generateAccessToken = (userId: UserId): string => {
         const accessToken = jwt.sign(
             { userId },
             secret,
-            { expiresIn: '1m' }
+            { expiresIn: '15m' }
         );
 
         return accessToken;
@@ -41,7 +41,7 @@ export const generateRefreshToken = (userId: UserId): string => {
         const refreshToken = jwt.sign(
             { userId },
             secret,
-            { expiresIn: '4m' }
+            { expiresIn: '100d' }
         );
 
         return refreshToken;
